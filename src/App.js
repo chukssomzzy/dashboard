@@ -5,8 +5,9 @@ import { TooltipComponent } from '@syncfusion/ej2-react-popups'
 import {Navbar,Footer,ThemeSettings,Sidebar} from "./components"
 import {Ecommerce,Orders,Calendar,Employees,Stacked,Pyramid,Customers,Area,Financial,ColorPicker,ColorMapping,Kanban,Editor,Line,Pie} from "./pages"
 import "./App.css"
+import {useGlobalContext} from "./context/context"
 const App = () => {
-	const activeMenu = true
+	const {activeMenu} = useGlobalContext()
 	return (
 		<div>
 		<BrowserRouter>
@@ -33,7 +34,6 @@ const App = () => {
 			 <div className='fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full'>
 				 <Navbar />
 		 </div>
-			</div>
 			<div>
       <Routes>
 			 {/*Dashboard*/} 
@@ -58,6 +58,7 @@ const App = () => {
 				<Route path="/stacked" element={<Stacked/>} />
 			</Routes>
 		</div>
+        </div>
 			</div>
 		</BrowserRouter>
  </div>
